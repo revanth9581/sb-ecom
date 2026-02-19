@@ -1,4 +1,4 @@
-package com.ecommerce.project.contoller;
+package com.ecommerce.project.controller;
 import com.ecommerce.project.config.AppConstants;
 import com.ecommerce.project.payload.CategoryDto;
 import com.ecommerce.project.payload.CategoryResponse;
@@ -7,7 +7,6 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api")

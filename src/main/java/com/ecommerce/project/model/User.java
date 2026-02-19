@@ -22,16 +22,22 @@ import java.util.Set;
                                             @UniqueConstraint(columnNames = "email")})
 public class User {
 
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     @NotBlank
     @Size(max = 20)
     private String username;
+    private String password;
     @NotBlank
     @Size(max = 20)
     @Email
-    private String password;
     private String email;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE},fetch = FetchType.EAGER)
@@ -48,4 +54,5 @@ public class User {
     @OneToMany(mappedBy = "user",cascade = {CascadeType.PERSIST,CascadeType.MERGE},
                                     orphanRemoval = true)
     private Set<Product> products;
+
 }
